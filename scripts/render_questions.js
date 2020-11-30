@@ -37,13 +37,14 @@ let questionValues = [100, 200, 300, 400, 500];
 function renderQuestions() {
   // Add code here
   for (let i = 0; i < numCategories; i++) {
-    let questionHtml = "<div class='question'>";
+    let questionHtml = "<div class='questions-column'>";
     for (const element of questionValues) {
-      element = element + "<div class='question-cell'>";
+      let elementCell = "<div class='question-cell'>" + element;
+      let merge = elementCell + questionHtml;
+      $("#questions").append(
+        "<div class='question-cell'>" + questionValues[i] + "</div>"
+      );
     }
     questionHtml = questionHtml + "</div>";
-    $(numCategories).append(
-      "<div class='question-cell'>" + questionValues[i] + "</div>"
-    );
   }
 }
