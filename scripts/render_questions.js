@@ -39,12 +39,12 @@ function renderQuestions() {
   for (let i = 0; i < numCategories; i++) {
     let questionHtml = "<div class='questions-column'>";
     for (const element of questionValues) {
+      questionHtml = questionHtml + "</div>";
       let elementCell = "<div class='question-cell'>" + element;
       let merge = elementCell + questionHtml;
       $("#questions").append(
         "<div class='question-cell'>" + questionValues[i] + "</div>"
       );
     }
-    questionHtml = questionHtml + "</div>";
   }
 }
